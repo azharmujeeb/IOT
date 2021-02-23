@@ -1,0 +1,9 @@
+-RPI 4 model b (that's the circuit board) (11k-15k)/ zero W
+-2 Infra-red sensors (120-500)
+-5V buzzer (to make a small noice when an individual passes by)(30 to 50)
+-power supply(USB battery pack to power the Raspberry Pi) 
+-mini breadboard (to keep our wiring stuff safe and see if it works before finalising the circuit)(70-180)
+-The bluetooth chipset to work wirelessly(750-800)
+- wires to connnect the circuit. male to male & female to male(180)
+-casing LKR 600
+-battery cables 
