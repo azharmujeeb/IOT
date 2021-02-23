@@ -1,0 +1,22 @@
+Mujeeb
+I prefer to use RoyalBlue color for our project... 
+RoyalBlue - #4169E1 
+White - #FFFFFF
+
+I am creating the admin page for the project
+There will be: (Taking an example of a super market)
+1. Current Date and Time
+2. Log in and Sign up page.
+3. Today supermarket opened time.
+4. Total entered today.
+5. Total entered yesterday.
+6. Last person left date and time.
+7. Yesterday Close time.
+8. Total entered yesterday 
+9. Graph
+10. Bar chart on "Traffic hour (average time)".
+11. Bar chart on "Free time".
+12. Pie chart of 1 week on "how many people entered".
+
+Nav bar - 
+https://www.youtube.com/watch?v=YesSVqjcDts&ab_channel=CodingMarket
