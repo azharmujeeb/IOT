@@ -4,10 +4,12 @@
 	<link rel="stylesheet" href="LoginAndSignUp.css">
 
 	<!-- Firebase -->
-	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+	<<!-- script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script> -->
 	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+
+	<script src="loginAndSignup.js"></script>
 
 </head>
 <body>
@@ -23,36 +25,25 @@
 				<img src="tw.png">
 				<img src="gp.png">
 			</div>
+
 			<!-- Login In Form -->
 			<form id="login" class="input-group">
-				<input type="text" class="input-field" placeholder="Email ID" id="lid">
+				<input type="text" class="input-field" placeholder="Email ID" id="lemail">
 				<input type="password" class="input-field" placeholder="Enter Password" id="lpass">
 				<input type="checkbox" class="check-box"> <span>Remember User ID</span>
-				<button type="submit" class="submit-btn" id="login-btn">Log in</button>
+				<button type="submit" class="submit-btn" id="signIn" onclick="signIn()">Log in</button>
 			</form>
+
 			<!-- Register Form -->
 			<form id="register" class="input-group">
-				<input type="text" class="input-field" placeholder="User ID" id="rid">
+				<input type="text" class="input-field" placeholder="User Id" id="rid">
 				<input type="email" class="input-field" placeholder="Email ID" id="remail">
 				<input type="password" class="input-field" placeholder="Enter Password" id="rpass">
 				<input type="checkbox" class="check-box" required> <span>I agree to the terms and conditions</span>
-				<button type="submit" class="submit-btn" id="signup-btn">Register</button>
+				<button type="submit" class="submit-btn" id="signUp" onclick="signUp()">Register</button>
 			</form>
 		</div>
 	</div>
-
-
-	<script src="loginAndSignup.js"></script>
-	<script>
-		firebase.auth().onAuthStateChanged(function(User){
-			
-			if(User){
-				window.location.href="loginAndSignUp.html"
-			}
-
-		});
-	</script>
-
 
 	<script>
 		var x = document.getElementById("login");

@@ -12,12 +12,27 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+//Try 2
+const auth = firebase.auth();
 
-  firebase.auth.Auth.Persistence.LOCAL;
+function signUp(){
+
+  var id = document.getElementById("rid");
+  var email = document.getElementById("remail");
+  var pass = document.getElementById("rpass");
+
+  const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
+  primise.catch(e => alert(e.message));
+
+  alert("Signed Up");
+
+}
 
 
 
-  $("#login-btn").click(function(){
+
+//Not working
+/*  $("#login-btn").click(function(){
 
       var email = $("#lemail").val();
       var password = $("#lpass").val();
@@ -31,6 +46,9 @@
               var errorCode = error.code;
               var errorMessage = error.message;
 
+              console.log(errorCode);
+              console.log(errorMessage);
+
               window.alert("Message : " +errorMessage);
 
           });
@@ -40,4 +58,4 @@
           window.alert("Please fill out all the fields.")
 
       }
-  });
+  });*/
