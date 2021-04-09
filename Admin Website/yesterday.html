@@ -4,8 +4,9 @@
 	<title>Yesterday</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="today.js"></script>
 </head>
-<body>
+<body onload="display_yesterday();">
 
 	<div class="wrapper">
 		<div class="sidebar">
@@ -24,8 +25,25 @@
 		<div class="main_content">
 			<div class="header">Welcome! Have a nice day.</div>
 			<div class="info">
-				<div>Welcome <b>Admin!</b></div>
-				<div>yesterday</div>
+				<div class="yesterdayDateAndTime">
+					Yesterday's Date: 
+					<div id="yest"></div>
+				</div>
+				<div class="openedTime">
+					Yesterday Opened Time:
+				</div>
+				<div class="closedTime">
+					Yesterday Closed Time:
+				</div>
+				<div class="total">
+					Total Number of people entered yesterday: 
+				</div>
+				<div class="lastEntered">
+					Time of the last person that entered the room:
+				</div>
+				<div class="lastout">
+					Time of the last person leaving the room:
+				</div>
 			</div>
 		</div>
 	</div>

@@ -59,6 +59,7 @@ body{
 .wrapper .main_content{
 	width: 100%;
 	margin-left: 200px;
+	font-weight: bold;
 }
 
 .wrapper .main_content .header{

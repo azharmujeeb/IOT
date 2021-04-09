@@ -12,7 +12,10 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-//Try 2
+
+
+
+//Try 2 not working.
 const auth = firebase.auth();
 
 function signUp(){
