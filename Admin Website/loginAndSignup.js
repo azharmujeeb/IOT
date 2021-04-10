@@ -1,8 +1,9 @@
-// Your web app's Firebase configuration
+  // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyDB-6U09zokZcEa0ccnyqfqaGMn8WI1_XQ",
     authDomain: "main-7ab9c.firebaseapp.com",
+    databaseURL: "https://main-7ab9c-default-rtdb.firebaseio.com",
     projectId: "main-7ab9c",
     storageBucket: "main-7ab9c.appspot.com",
     messagingSenderId: "108058188999",
@@ -11,12 +12,56 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  /*firebase.analytics();*/
+
+
+
+/*firebase.auth().onAuthStateChanged(function(user){
+  if(user){
+
+  }else{
+    
+  }
+});*/
+
+
+function login(event){
+  event.preventDefault();
+  var email = document.getElementById('lemail').value
+  var password = document.getElementById('lpass').value
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+    //Handle errrors here
+
+    console.log('Error signing in,'error.message)
+    alert(error.message)
+  })/*.then(function(user){
+    if(user){
+      alert('Welcome back, you are now logged in!')
+    }
+  })*/
+}
+
+
+$(".register forem").on("submit",function(event){
+  event.preventDefault();
+
+  var email = $(".register .email").val();
+  var password = $(".register .password").val();
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(function(user){
+    console.log(user);
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
 
 
 
 
 //Try 2 not working.
-const auth = firebase.auth();
+/*const auth = firebase.auth();
 
 function signUp(){
 
@@ -29,7 +74,7 @@ function signUp(){
 
   alert("Signed Up");
 
-}
+}*/
 
 
 

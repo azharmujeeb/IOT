@@ -1,5 +1,6 @@
 <html>
 <head>
+
 	<title>Login and Registration Form</title>
 	<link rel="stylesheet" href="LoginAndSignUp.css">
 
@@ -7,9 +8,11 @@
 	<!-- script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script> -->
 
 	<!-- <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script> -->
 
 	<script src="loginAndSignup.js"></script>
 
@@ -31,20 +34,20 @@
 
 
 			<!-- Login In Form -->
-			<form id="login" class="input-group">
+			<form id="login" class="input-group" onsubmit="login(event)">
 				<input type="text" class="input-field" placeholder="Email ID" id="lemail">
 				<input type="password" class="input-field" placeholder="Enter Password" id="lpass">
 				<input type="checkbox" class="check-box"> <span>Remember User ID</span>
-				<button type="submit" class="submit-btn" id="signIn" onclick="signIn()">Log in</button>
+				<button type="submit" class="submit-btn" id="signIn">Log in</button>
 			</form>
 
 
 
 			<!-- Register Form -->
-			<form id="register" class="input-group">
+			<form id="register" class="input-group" onsubmit="signup(event)">
 				<!-- <input type="text" class="input-field" placeholder="User Id" id="rid"> -->
-				<input type="email" class="input-field" placeholder="Email ID" id="remail">
-				<input type="password" class="input-field" placeholder="Enter Password" id="rpass">
+				<input type="email" class="input-field" placeholder="Email ID" id="email">
+				<input type="password" class="input-field" placeholder="Enter Password" id="password">
 				<input type="checkbox" class="check-box" required> <span>I agree to the terms and conditions</span>
 				<button type="submit" class="submit-btn" id="signUp" onclick="signUp()">Register</button>
 			</form>
