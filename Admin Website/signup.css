@@ -32,9 +32,19 @@ body{
 	outline: none;
 }
 
+h1{
+	margin-top: 20px;
+}
+
+::placeholder{
+	color: #7f77a6;
+	font-weight: bold;
+}
+
 button{
 	background-color: #4b4276;
-	color: #fff;
+	color: white;
+	font-weight: bold;
 	width: 100%;
 	padding: 10px;
 	border-radius: 20px;
@@ -45,7 +55,7 @@ button{
 	cursor: pointer;
 }
 
-a{
+/*a{
 	text-decoration: none;
 }
 
@@ -59,4 +69,4 @@ hr{
 	width: 30px;
 	margin: -14px auto 10px;
 	background-color: rgb(243,245,249);
-}
+}*/
