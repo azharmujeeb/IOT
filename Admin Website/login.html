@@ -26,16 +26,21 @@
 			<div class="info">
 				<div class="sign-up-form">
 					<h1>Admin Login</h1>
-					<form>
-						<input type="text" class="input-box" placeholder="User Name">
-						<input type="password" class="input-box" placeholder="Enter your password">
+					<form id="loginForm" accept="#">
+						<input type="email" class="input-box" id="email" placeholder="Email Address">
+						<input type="password" class="input-box" id="pass" placeholder="Enter your password">
 						<p><span><input type="checkbox"></span> I agree to the terms and conditions.</p>
-						<button type="button" class="signup-btn">Login</button>
+						<button type="buttom" id="loginbtn" class="signup-btn">Login</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script> -->
+	<script type="text/javascript" src="login.js"></script>
 
 </body>
 </html>

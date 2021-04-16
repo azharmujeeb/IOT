@@ -36,7 +36,7 @@ body{
 input[type="text"]:focus,input[type="password"]:focus{
 	border-bottom: 3.5px solid #b2a9de;
 	border-bottom-right-radius: 20px;
-	color: white;
+	color: black;
 	transition: 0.2s ease;
 }
 
