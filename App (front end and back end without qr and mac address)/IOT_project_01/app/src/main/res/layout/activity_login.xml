@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/royal_blue"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/proper"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="110dp">
+
+    </ImageView>
+
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/input"
+        android:hint="Sign Up"
+        android:padding="07dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/white"
+        android:textSize="20sp"
+        android:backgroundTint="@color/white"
+        tools:ignore="MissingConstraints">
+
+    </Button>
+
+
+    <Button
+        android:id="@+id/email"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/input"
+        android:hint="Continue With Email"
+        android:padding="07dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/white"
+        android:backgroundTint="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="560dp">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text="Already Have A Account? Log In"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="620dp">
+
+    </TextView>
+
+
+</RelativeLayout>
