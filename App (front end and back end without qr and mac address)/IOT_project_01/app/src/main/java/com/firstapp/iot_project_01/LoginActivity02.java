@@ -34,7 +34,7 @@ public class LoginActivity02 extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email02);
         password = (EditText) findViewById(R.id.password02);
         Member = new Member();
-        datareference = FirebaseDatabase.getInstance().getReference().child("Sign Up");
+        datareference = FirebaseDatabase.getInstance().getReference().child("Sign Up App");
         next = (Button) findViewById(R.id.next03);
 
         auth = FirebaseAuth.getInstance();

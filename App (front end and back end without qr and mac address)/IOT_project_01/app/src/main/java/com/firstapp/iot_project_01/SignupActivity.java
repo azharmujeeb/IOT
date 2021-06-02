@@ -31,7 +31,7 @@ public class SignupActivity extends AppCompatActivity {
         next02 = (Button) findViewById(R.id.next01);
         Member = new Member();
 
-        reff= FirebaseDatabase.getInstance().getReference().child("Log In");
+        reff= FirebaseDatabase.getInstance().getReference().child("Log In App");
 
         next02.setOnClickListener(new View.OnClickListener() {
             @Override
