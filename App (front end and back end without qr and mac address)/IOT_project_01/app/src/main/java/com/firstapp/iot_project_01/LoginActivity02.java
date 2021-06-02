@@ -3,6 +3,7 @@ package com.firstapp.iot_project_01;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,12 +19,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity02 extends AppCompatActivity {
-    EditText email,password;
+    EditText email, password;
     Member Member;
     DatabaseReference datareference;
     Button next;
 
     private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class LoginActivity02 extends AppCompatActivity {
 
         email = (EditText) findViewById(R.id.email02);
         password = (EditText) findViewById(R.id.password02);
-        Member =new Member();
+        Member = new Member();
         datareference = FirebaseDatabase.getInstance().getReference().child("Sign Up");
         next = (Button) findViewById(R.id.next03);
 
@@ -55,21 +57,33 @@ public class LoginActivity02 extends AppCompatActivity {
                 Member.setPassword01(password.getText().toString().trim());
                 datareference.push().setValue(Member);
                 Toast.makeText(LoginActivity02.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                sendusertohome();
             }
         });
     }
 
+    private void sendusertohome() {
+        Intent home = new Intent(LoginActivity02.this, HomeActivity.class);
+        startActivity(home);
+        finish();
+    }
+
+
     private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity02.this,new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity02.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(LoginActivity02.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                } else
-                {
+                } else {
                     Toast.makeText(LoginActivity02.this, "Registration failed", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }
+
+
+
+
 }

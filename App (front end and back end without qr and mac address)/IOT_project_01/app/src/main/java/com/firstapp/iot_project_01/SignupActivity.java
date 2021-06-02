@@ -3,6 +3,7 @@ package com.firstapp.iot_project_01;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,13 @@ public class SignupActivity extends AppCompatActivity {
                 Member.setPassword02(password.getText().toString().trim());
                 reff.push().setValue(Member);
                 Toast.makeText(SignupActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                sendusertohome();
+            }
+
+            private void sendusertohome() {
+                Intent home2 = new Intent(SignupActivity.this, HomeActivity.class);
+                startActivity(home2);
+                finish();
             }
         });
 
