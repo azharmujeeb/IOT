@@ -75,3 +75,42 @@ jsSignupBtn.addEventListener('click', (e) => {
   	window.alert("Details saved.");
 
   };
+
+
+
+  //Login by firebase auth
+  firebase.auth().onAuthStateChanged(function(user){
+
+    if(user){
+
+      var user = firebase.auth().currentUser;
+
+      if(user!=null){
+
+        var email = user.email;
+
+      }
+
+    }else{
+
+      window.alert("Sorry, Contact the admin.");
+
+    }
+
+  });
+
+
+  function login(){
+
+    var email = document.getElementById("#email").value;
+    var password = document.getElementById("#pass").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+      //Handle errors here
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      window.alert("Error : "+errorMessage);
+    });
+
+  }
