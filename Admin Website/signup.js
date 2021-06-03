@@ -1,29 +1,3 @@
-/*const jsEmail = document.getElementById("email");
-const jsPass = document.getElementById("password");
-
-const jsSignupBtn = document.getElementById("signupbtn");
-
-const database = firebase.database();
-
-
-jsSignupBtn.addEventListener('click', (e) => {
-
-	e.preventDefault();
-
-	database.ref('/Admin/'+jsEmail.value).set({
-
-		Email : jsEmail.value,
-		Password : jsPass.value
-
-	});
-
-});*/
-
-
-
-
-
-
 /*284 code*/
   var firebaseConfig = {
     apiKey: "AIzaSyDB-6U09zokZcEa0ccnyqfqaGMn8WI1_XQ",
@@ -62,6 +36,7 @@ jsSignupBtn.addEventListener('click', (e) => {
   }
 
 
+
   //Save Info to firebase database
   function saveSignupinfo(email, password){
 
@@ -98,6 +73,7 @@ jsSignupBtn.addEventListener('click', (e) => {
     }
 
   });
+
 
 
   function login(){
