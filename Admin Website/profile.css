@@ -11,10 +11,10 @@ body{
 	width: 153px;
 	height: 153px;
 	border: 2px solid white;
-	box-shadow: -3px -3px 7px #ffffff73,
-				3px 3px 5px rgba(94,104,121,0.288);
+	box-shadow: -3px -3px 7px #2b2836,
+				3px 3px 5px rgba(59, 63, 68, 0.288);
 	border-radius: 50%;
-	background-color: #4b4276;
+	background-color: #1b3688;
 	margin-top: 50px;
 	overflow: hidden;
 	transition: all 0.65s;
@@ -33,7 +33,7 @@ img{
 }
 
 ::placeholder{
-	color: #7f77a6;
+	color: #e1e3eb;
 }
 
 input[type="text"]{
@@ -51,7 +51,7 @@ input[type="email"]{
 	width: 220px;
 	height: 32px;
 	border: none;
-	border-bottom: 1px solid #9982e6;
+	border-bottom: 1px solid #3759c0;
 	font-family: 'Roboto',sans-serif;
 	font-weight: 400;
 	font-size: 15px;
@@ -60,15 +60,15 @@ input[type="email"]{
 
 input[type="text"]:focus,
 input[type="email"]:focus{
-	border-bottom: 2px solid #b2a9de;
+	border-bottom: 2px solid #2b2836;
 	border-bottom-right-radius: 20px;
 	color: white;
 	transition: 0.2s ease;
 }
 
 button{
-	border: 1px solid #b2a9de;
-	background-color: #4b4276;
+	border: 1px solid #2b2836;
+	background-color: #345fe0;
 	color: white;
 	height: 30px;
 	width: 100px;
@@ -88,16 +88,16 @@ input[type="file"]{
 label{
 	box-sizing: border-box;
 	font-size: 20px;
-	background-color: #4b4276;
+	background-color: #4c2de6;
 	color: white;
-	border: 1px solid #4b4276;
+	border: 1px solid #4c2de6;
 	padding: 2px 15px;
 	border-radius: 5px;
 	transition: all 0.3s;
 }
 
 label:hover{
-	border-bottom: 2px solid #b2a9de;
+	border-bottom: 2px solid #2b2836;
 	border-bottom-right-radius: 20px;
 	color: white;
 	transition: 0.2s ease;
