@@ -17,11 +17,15 @@
     android:textSize="20dp"
     android:textAlignment="center"/>
 
-    <EditText
+    <TextView
         android:id="@+id/no_of_people"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:textColor="@color/white"
         android:layout_marginTop="120dp"
+        android:padding="10dp"
         android:layout_marginLeft="150dp"
         />
 

@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference().child("");
+        databaseReference = firebaseDatabase.getReference().child("Data");
 
         retriveTV = findViewById(R.id.no_of_people);
 
