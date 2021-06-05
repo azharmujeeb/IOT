@@ -25,15 +25,38 @@
         android:layout_marginLeft="150dp"
         />
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:text="Available Rooms:"
-        android:textColor="@color/white"
+        android:text="Status:"
         android:textSize="20sp"
-        android:textAlignment="center" />
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
 
+
+    <EditText
+        android:id="@+id/status"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="150dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="Time Period:"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="150dp"
+        />
 
 </RelativeLayout>
