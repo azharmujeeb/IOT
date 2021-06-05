@@ -24,20 +24,44 @@
 		<div class="main_content">
 			<center>
 				<div class="box">
-					<img src="admin.png"></image>
-					<input type="file" name="" id="file" accept="image/*">
-					<label for="file">EDIT PIC</label>
-					<input type="text" name="" placeholder="User ID">
-					<input type="email" name="" placeholder="Email Address">
-					<input type="text" name="" placeholder="Phone Number">
-					<input type="text" name="" placeholder="Date of Birth">
-					<input type="text" name="" placeholder="Gender">
-					<button style="float: left;margin: 10px 0 0 18.2%;">CANCEL</button>
-					<button style="float: right;margin: 10px 18.2% 0 0;">DONE</button>
+					<form id="form" class="editProfileForm">
+
+						<img src="admin.png"></image>
+						<input type="file" name="" id="file" accept="image/*">
+						<label for="file">EDIT PIC</label>
+
+						<input type="text" id="userid" placeholder="User ID">
+						<input type="email" id="email" placeholder="Email Address">
+						<!-- <select name="email" id="email" placeholder="Email Address">
+							<option>SelectAllData()</option>
+						</select> -->
+						<input type="text" id="number" placeholder="Phone Number">
+						<input type="text" id="birthdate" placeholder="Date of Birth">
+						<input type="text" id="gender" placeholder="Gender">
+
+						<!-- <button type="submit" style="float: left;margin: 10px 0 0 18.2%;">CANCEL</button> -->
+						<button type="submit" id="donebtn" class="done-btn">DONE</button>
+
+					</form>
+					
 				</div>
 			</center>
 		</div>
 	</div>
+
+
+
+
+
+
+
+<!-- 284 code -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+
+
+<script src="editprofile.js"></script>
 
 </body>
 </html>

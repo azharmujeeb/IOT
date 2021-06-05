@@ -1,3 +1,4 @@
+/*284 code*/
   var firebaseConfig = {
     apiKey: "AIzaSyDB-6U09zokZcEa0ccnyqfqaGMn8WI1_XQ",
     authDomain: "main-7ab9c.firebaseapp.com",
@@ -10,28 +11,82 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  /*firebase.analytics();*/
 
-  const database = firebase.database()
-  var auth = firebase.auth();
+  //referencing the user
+  let signupinfo = firebase.database().ref("Web Sign Up");
 
-  document.getElementById("form").addEventListener("submit",(e)=>{
-    e.preventDefault();
-    var email = getId("email");
-    var password = getId("password");
-    var signupbtn = getId("signupbtn");
-    console.log(email)
-    var FireUser = auth.createUserWithEmailAndPassword(email, password);
-/*    signupbtn.disabled=true;
-    signupbtn.textContent="Creating, Please Wait.."*/
-    window.alert("Account Created Successfully.")
-    FireUser.catch(function(error){
-/*    signupbtn.disabled=false;
-    signupbtn.textContent="Sign Up"*/
-      console.log(error.message);
-    });
+  //Listen for a submit
+  document.querySelector(".signup-form").addEventListener("submit", submitForm);
+
+
+
+  function submitForm(e){
+
+  	e.preventDefault();
+
+  	//Get input values
+  	let email = document.querySelector("#email").value;
+  	let password = document.querySelector("#password").value;
+
+
+  	console.log(email, password);
+  	saveSignupinfo(email, password);
+  	document.querySelector(".signup-form").reset();
+
+  }
+
+
+
+  //Save Info to firebase database
+  function saveSignupinfo(email, password){
+
+  	let newSignupInfo = signupinfo.push(); 
+
+  	newSignupInfo.set({
+  		email: email,
+  		password: password,
+  	});
+
+  	window.alert("Details saved.");
+
+  };
+
+
+
+  //Login by firebase auth
+  firebase.auth().onAuthStateChanged(function(user){
+
+    if(user){
+
+      var user = firebase.auth().currentUser;
+
+      if(user!=null){
+
+        var email = user.email;
+
+      }
+
+    }else{
+
+      window.alert("Sorry, Contact the admin.");
+
+    }
+
   });
 
-  function getId(id){
-    return document.getElementById(id).value;
+
+
+  function login(){
+
+    var email = document.getElementById("#email").value;
+    var password = document.getElementById("#pass").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+      //Handle errors here
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      window.alert("Error : "+errorMessage);
+    });
+
   }
