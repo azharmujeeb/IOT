@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-    private TextView retriveTV;
+     TextView retriveTV,staus,timeperiod;
 
 
     @Override
@@ -28,20 +28,42 @@ public class HomeActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference().child("Data");
 
         retriveTV = findViewById(R.id.no_of_people);
 
+        staus = findViewById(R.id.status);
+
+        databaseReference = firebaseDatabase.getReference().child("Status");
+
+        timeperiod = findViewById(R.id.time);
+
         getdata();
 
+        getstatus();
 
+
+    }
+
+    private void getstatus() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String  irusha = snapshot.getValue(String.class);
+                staus.setText(irusha);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(HomeActivity.this, "Failed to get data", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void getdata() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
+               String value = snapshot.getValue(String.class);
 
                 retriveTV.setText(value);
             }
