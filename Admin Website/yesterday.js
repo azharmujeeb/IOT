@@ -11,4 +11,12 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  var YOTimeRef = firebase.database().ref('WebYesterdayOpeningTime');
+  var firebaseRef = firebase.database().ref('WebYesterdayOpeningTime');
+  firebaseRef.on("value",function(snapshot){
+    snapshot.forEach(function(element){
+      console.log(element.val());
+    });
+  })
+
+
+/*  window.alert();*/
