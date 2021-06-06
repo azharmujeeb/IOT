@@ -1,0 +1,7 @@
+com/firstapp/qrcode02/BuildConfig.java
+ com.firstapp.qrcode02.BuildConfig
+com/firstapp/qrcode02/MainActivity.java
+ com.firstapp.qrcode02.MainActivity
+ com.firstapp.qrcode02.MainActivity$1
+ com.firstapp.qrcode02.MainActivity$2
+ com.firstapp.qrcode02.MainActivity$2$1
