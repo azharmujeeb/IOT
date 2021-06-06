@@ -44,9 +44,9 @@ function display_yesterday(){
     measurementId: "G-ZL6XBQNDZ8"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);*/
 
-    //referencing the user
+  /*  //referencing the user
   let openTime = firebase.database().ref("Web Opening Time");
   //Listen for a submit
   document.querySelector(".openingtime_form").addEventListener("submit", submitForm);
@@ -78,3 +78,4 @@ function display_yesterday(){
   	window.alert("Opening time saved.");
 
   };*/
+
