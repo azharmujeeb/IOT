@@ -22,12 +22,11 @@
         android:id="@+id/no_of_people"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="@color/white"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="170dp"
         android:padding="10dp"
-        android:layout_marginLeft="55dp"
-        />
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="match_parent"
