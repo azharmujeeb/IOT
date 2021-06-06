@@ -23,30 +23,42 @@
 			</ul>
 		</div>
 		<div class="main_content">
-			<div class="header">Welcome! Have a nice day.</div>
-			<div class="info">
-				<div class="yesterdayDateAndTime">
-					Yesterday's Date: 
-					<div id="yest"></div>
-				</div>
-				<div class="openedTime">
-					Yesterday Opened Time:
-				</div>
-				<div class="closedTime">
-					Yesterday Closed Time:
-				</div>
-				<div class="total">
-					Total Number of people entered yesterday: 
-				</div>
-				<div class="lastEntered">
-					Time of the last person that entered the room:
-				</div>
-				<div class="lastout">
-					Time of the last person leaving the room:
-				</div>
+			<div class="header">
+				Welcome! Have a nice day.
 			</div>
+			<form>
+				<div class="info">
+					<div class="yesterdayDateAndTime">
+						Yesterday's Date: 
+						<div id="yest"></div>
+					</div>
+					<div class="openedTime">
+						Yesterday Opened Time:
+					</div>
+					<div class="closedTime">
+						Yesterday Closed Time:
+					</div>
+					<div class="total">
+						Total Number of people entered yesterday: 
+					</div>
+					<div class="lastEntered">
+						Time of the last person that entered the room:
+					</div>
+					<div class="lastout">
+						Time of the last person leaving the room:
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
+<script type="text/javascript" src="yesterday.js"></script>
 
 </body>
 </html>
