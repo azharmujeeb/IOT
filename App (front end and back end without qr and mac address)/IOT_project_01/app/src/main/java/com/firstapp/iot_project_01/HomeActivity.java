@@ -32,9 +32,10 @@ public class HomeActivity extends AppCompatActivity {
 
         retriveTV = findViewById(R.id.no_of_people);
 
+        //databaseReference = firebaseDatabase.getReference().child("Status");
+
         staus = findViewById(R.id.status);
 
-        //databaseReference = firebaseDatabase.getReference().child("Status");
 
         timeperiod = findViewById(R.id.time);
 
@@ -49,7 +50,8 @@ public class HomeActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+               /* String irusha = snapshot.getValue(String.class);
+                staus.setText(irusha);*/
             }
 
             @Override
