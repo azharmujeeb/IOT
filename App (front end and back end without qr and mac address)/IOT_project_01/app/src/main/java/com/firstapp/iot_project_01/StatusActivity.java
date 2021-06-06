@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,60 +15,56 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class HomeActivity extends AppCompatActivity {
+public class StatusActivity extends AppCompatActivity {
+
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-     TextView retriveTV;
-     Button next;
-
+    TextView status;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_status);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference().child("Count");
+        //databaseReference = firebaseDatabase.getReference().child("Status");
 
-        retriveTV = findViewById(R.id.no_of_people);
+        status = (TextView) findViewById(R.id.status2);
 
-        
-        next = (Button) findViewById(R.id.next04);
-        
+        next = (Button) findViewById(R.id.next05);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendusertostatuspage();
+                sendusertohomepage();
             }
         });
 
-        getdata();
-        
+        getstatus();
     }
 
-    private void sendusertostatuspage() {
-        Intent status = new Intent(HomeActivity.this, StatusActivity.class);
-        startActivity(status);
+    private void sendusertohomepage() {
+        Intent home = new Intent(StatusActivity.this,HomeActivity.class);
+        startActivity(home);
         finish();
     }
 
-
-    private void getdata() {
+    private void getstatus() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-              int intval2 = Integer.valueOf(String.valueOf(snapshot.getValue()));
+                String status3 = snapshot.getValue(String.class);
 
-                retriveTV.setText(snapshot.getValue().toString());
+                status.setText(status3);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(HomeActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
-
 }
