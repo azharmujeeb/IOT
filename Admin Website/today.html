@@ -27,19 +27,34 @@
 			<div class="info">
 				<div id="ct"></div>
 				<div class="todayDetail">
-					<div class="openingTime">
-						Opening Time: 
-					</div>
+					<form id="form" class="openingtime_form">
+						<div class="openingTime">
+							Opening Time: <input type="time" name="openTime" id="otime" style="font-weight: bold;">  <button type="submit" class="btn_submitTime" style="background-color: #53488c; border: none; color: white; padding: 5px 15px; font-weight: bold; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 4px;">submit</button>
+						</div>
+					</form>
+					
 					<div class="currentEntered">
 						Current Student Entered: 
 					</div>
 					<div class="totalEntered">
-						Total Entered today: 
+						Total Entered : 
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+	<!-- 284 code -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+
+
+<script src="today.js"></script>
 
 </body>
 </html>
