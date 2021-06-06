@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-     TextView retriveTV;
+     TextView retriveTV,staus,timeperiod;
      Button next;
 
 
@@ -36,24 +36,27 @@ public class HomeActivity extends AppCompatActivity {
 
         retriveTV = findViewById(R.id.no_of_people);
 
-        
-        next = (Button) findViewById(R.id.next04);
-        
+
+        timeperiod = findViewById(R.id.time);
+
+        next = (Button) findViewById(R.id.next05);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendusertostatuspage();
+                Sendusertostatuspage();
             }
         });
 
         getdata();
-        
+
+
+
     }
 
-    private void sendusertostatuspage() {
+    private void Sendusertostatuspage() {
         Intent status = new Intent(HomeActivity.this, StatusActivity.class);
         startActivity(status);
-        finish();
     }
 
 

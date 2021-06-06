@@ -19,7 +19,7 @@
     android:textAlignment="center"/>
 
     <TextView
-        android:id="@+id/status2"
+        android:id="@+id/no_of_people"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textSize="20dp"

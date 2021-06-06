@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ public class StatusActivity extends AppCompatActivity {
     TextView status;
     Button next;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +32,12 @@ public class StatusActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        //databaseReference = firebaseDatabase.getReference().child("Status");
+        databaseReference = firebaseDatabase.getReference().child("Status");
 
         status = (TextView) findViewById(R.id.status2);
 
-        next = (Button) findViewById(R.id.next05);
+        next = (Button) findViewById(R.id.next04);
+
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +45,13 @@ public class StatusActivity extends AppCompatActivity {
                 sendusertohomepage();
             }
         });
-
         getstatus();
+
     }
 
     private void sendusertohomepage() {
         Intent home = new Intent(StatusActivity.this,HomeActivity.class);
         startActivity(home);
-        finish();
     }
 
     private void getstatus() {
@@ -63,7 +65,7 @@ public class StatusActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(StatusActivity.this, "Failed to get data", Toast.LENGTH_SHORT).show();
             }
         });
     }
