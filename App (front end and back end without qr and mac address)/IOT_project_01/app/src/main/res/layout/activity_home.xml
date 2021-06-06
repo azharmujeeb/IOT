@@ -13,50 +13,61 @@
     android:layout_marginTop="40dp"
     android:padding="15dp"
     android:text="Number of People In A Room:"
+    android:textStyle="bold"
     android:textColor="@color/white"
-    android:textSize="20dp"
+    android:textSize="25dp"
     android:textAlignment="center"/>
 
-    <EditText
+    <TextView
         android:id="@+id/no_of_people"
-        android:layout_width="100dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="150dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="170dp"
+        android:padding="10dp"
+        android:layout_marginLeft="55dp"
         />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="Status:"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textAlignment="center"/>
-
-
-    <EditText
-        android:id="@+id/status"
-        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="150dp"
+        android:text="Status:"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_marginLeft="55dp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="400dp"
         android:text="Time Period:"
-        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textSize="25sp"
         android:textColor="@color/white"
         android:textAlignment="center"/>
 
-    <EditText
+    <TextView
         android:id="@+id/time"
-        android:layout_width="100dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="55dp"
+        android:textColor="@color/white"
+        android:padding="10dp"
         />
 
 </RelativeLayout>
