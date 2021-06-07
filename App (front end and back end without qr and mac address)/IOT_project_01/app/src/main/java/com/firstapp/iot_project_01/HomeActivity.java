@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
 
      TextView retriveTV,staus,timeperiod;
-     Button next;
+     Button next,back;
 
 
     @Override
@@ -41,6 +41,8 @@ public class HomeActivity extends AppCompatActivity {
 
         next = (Button) findViewById(R.id.next05);
 
+        back = (Button) findViewById(R.id.back);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,10 +50,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                senduserback();
+            }
+        });
+
         getdata();
 
 
 
+    }
+
+    private void senduserback() {
+        Intent back = new Intent(HomeActivity.this,HomeActivity00.class);
+        startActivity(back);
     }
 
     private void Sendusertostatuspage() {
