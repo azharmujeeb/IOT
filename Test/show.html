@@ -1,0 +1,64 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <ul id="list">
+
+        </ul>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
+        <script id="MainScript">
+            var firebaseConfig = {
+                apiKey: "AIzaSyDB-6U09zokZcEa0ccnyqfqaGMn8WI1_XQ",
+                authDomain: "main-7ab9c.firebaseapp.com",
+                databaseURL: "https://main-7ab9c-default-rtdb.firebaseio.com",
+                projectId: "main-7ab9c",
+                storageBucket: "main-7ab9c.appspot.com",
+                messagingSenderId: "108058188999",
+                appId: "1:108058188999:web:af2dd087a15554733732e2",
+                measurementId: "G-ZL6XBQNDZ8"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var stdNo = 0;
+
+            function addItemsToList(openTime, closeTime){
+                var ul = document.getElementById('list');
+                var header = document.createElement('h2');
+
+                var _OpeningTime = document.createElement('li');
+                var _ClosingTime = document.createElement('li');
+                
+                _OpeningTime.innerHTML = 'Opening Time : '+openTime;
+                _ClosingTime.innerHTML = 'Closing Time : '+closeTime;
+
+                ul.appendChild(header);
+                ul.appendChild(_OpeningTime);
+
+            }
+
+            function FetchAllData(){
+                firebase.database().ref('WebTiming').once('value',function(snapshot){
+                    snapshot.forEach(
+                        function(ChildSnapshot){
+                            let YOpenTime = ChildSnapshot.val().YesterdayOpeningTime;
+                            let YCloseTime = ChildSnapshot.val().YesterdayClosingTime;
+                            addItemsToList(YOpenTime, YCloseTime);
+                        }
+                    );
+                });
+            }
+
+            window.onload(FetchAllData());
+
+        </script>
+        
+
+    </body>
+</html>
