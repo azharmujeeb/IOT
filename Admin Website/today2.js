@@ -1,6 +1,6 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
+ var firebaseConfig = {
     apiKey: "AIzaSyDB-6U09zokZcEa0ccnyqfqaGMn8WI1_XQ",
     authDomain: "main-7ab9c.firebaseapp.com",
     databaseURL: "https://main-7ab9c-default-rtdb.firebaseio.com",
@@ -11,36 +11,27 @@
     measurementId: "G-ZL6XBQNDZ8"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig); 
 
-  database = firebase.database();
 
-  var ref = database.ref('WebTodayOpeningTime');
-  ref.on('value', gotData, errData);
+  // retrieve Infos 
+function retrieveInfos(){
+  let ref = firebase.database().ref("Time");
+  ref.on("value",gotData);
+} 
 
-  function gotData(data) {
+function gotData(data){
+  let info = data.val();
+  let keys = object.keys(info);
 
-    /*var scorelisting = selectAll('scorelisting');
-    for(var i = 0; i < scorelisting.length; i++){
-      scorelisting[i].remove();
-    }
-*/
-    return console.log(data.val());
-    /*var WebTodayOpeningTime = data.val();
-    var keys = Object.keys(WebTodayOpeningTime);
-    console.log(keys);
-    for(var i = 0; i < keys.length; i++){
-      var k = keys[i];
-      var initials = WebTodayOpeningTime[k].score;
-      var WebTodayOpeningTime = WebTodayOpeningTime[k].WebTodayOpeningTime;
-      console.log(initials,WebTodayOpeningTime);*/
-      /*var li = createElement('li', WebTodayOpeningTime);
-      li.class('scorelisting');
-      li.parent('scorelist');*/
-    /*}*/
+  for(let i = 0; i < keys.length; i++){
+    let infoData = keys[i];
+    let time = info[infoData].Time;
+    console.log(time);
+
+    let infoResults = document.querySelector(".openingTime");
+
+    infoResults.innerHTML += `<div>
+    <p><strong>Today Opened Time : </strong>${time}<br/></p></div>` 
   }
-
-  function errData(err) {
-    console.log('Error!');
-    console.log(err);
-  }
+}
