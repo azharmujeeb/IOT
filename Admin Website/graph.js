@@ -15,7 +15,7 @@
 
 /*	  firebase.analytics();*/
 
-function selectAllData() {
+/*function selectAllData() {
 	firebase.database().ref('Web Graph').once('value',
 		function(AllRecords){
 			AllRecords.forEach(
@@ -45,4 +45,16 @@ function AddItemsToTable(date,entered){
 	trow.appendChild('td3');
 	tbody.appendChild('trow');
 
-}
+}*/
+
+
+
+
+
+var database = firebase.database();
+
+var starCountRef = firebase.database().ref('Count');
+starCountRef.on('value', (snapshot) => {
+  const data = snapshot.val();
+  updateStarCount(postElement, data);
+});

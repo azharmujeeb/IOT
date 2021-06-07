@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-tasks:15.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/dd06078518987e9f87308d26a1559eae/jetified-play-services-tasks-15.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/dd06078518987e9f87308d26a1559eae/jetified-play-services-tasks-15.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/dd06078518987e9f87308d26a1559eae/jetified-play-services-tasks-15.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/a005faed9a1e15f49abd3b573841884c/jetified-play-services-tasks-15.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/a005faed9a1e15f49abd3b573841884c/jetified-play-services-tasks-15.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-6.8.1-bin/caches/transforms-2/files-2.1/a005faed9a1e15f49abd3b573841884c/jetified-play-services-tasks-15.0.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

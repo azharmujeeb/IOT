@@ -3,7 +3,10 @@ package com.firstapp.iot_project_01;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +21,8 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-    private TextView retriveTV;
+     TextView retriveTV,staus,timeperiod;
+     Button next;
 
 
     @Override
@@ -28,22 +32,41 @@ public class HomeActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference().child("");
+        databaseReference = firebaseDatabase.getReference().child("Count");
 
         retriveTV = findViewById(R.id.no_of_people);
+
+
+        timeperiod = findViewById(R.id.time);
+
+        next = (Button) findViewById(R.id.next05);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sendusertostatuspage();
+            }
+        });
 
         getdata();
 
 
+
     }
+
+    private void Sendusertostatuspage() {
+        Intent status = new Intent(HomeActivity.this, StatusActivity.class);
+        startActivity(status);
+    }
+
 
     private void getdata() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
+              int intval2 = Integer.valueOf(String.valueOf(snapshot.getValue()));
 
-                retriveTV.setText(value);
+                retriveTV.setText(snapshot.getValue().toString());
             }
 
             @Override
