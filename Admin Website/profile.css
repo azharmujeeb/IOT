@@ -1,5 +1,5 @@
 body{
-	background-color: white;
+	background-color: lavender;
 }
 
 *:focus{
@@ -14,7 +14,7 @@ body{
 	box-shadow: -3px -3px 7px #2b2836,
 				3px 3px 5px rgba(59, 63, 68, 0.288);
 	border-radius: 50%;
-	background-color: #1b3688;
+	background-color: white;
 	margin-top: 50px;
 	overflow: hidden;
 	transition: all 0.65s;
