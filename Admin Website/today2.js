@@ -13,25 +13,59 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig); 
 
+  function getData(){
+    let ref = firebase.database().ref('Time');
+    ref.on("value",gotData);
+  }
+  function gotData(data){
+    let info = data.val();
+    let keys = Object.keys(info);
 
-  // retrieve Infos 
+    let infoData = key;
+    let time = info[infoData].Time;
+
+    for(let i=0;i<keys.length;i++){
+      let infoData = keys[i];
+      let time = info[infoData].Time;
+      console.log(time);
+
+      let infoResults = document.querySelector("todayDetail");
+
+      infoResults.innerHTML += `<div>
+    <p><strong>Today Opened Time : </strong>${time}<br/></p></div>` 
+    }
+  }
+  getData();
+
+
+
+
+
+
+
+
+
+
+
+/*  // retrieve Infos 
 function retrieveInfos(){
   let ref = firebase.database().ref("Time");
-  ref.on("value",gotData);
+  ref.once("value",gotData);
+  window.alert();
 } 
 
 function gotData(data){
   let info = data.val();
-  let keys = object.keys(info);
+  let keys = Object.keys(info);
 
   for(let i = 0; i < keys.length; i++){
     let infoData = keys[i];
     let time = info[infoData].Time;
     console.log(time);
 
-    let infoResults = document.querySelector(".openingTime");
+    let infoResults = document.querySelector("openingTime");
 
     infoResults.innerHTML += `<div>
     <p><strong>Today Opened Time : </strong>${time}<br/></p></div>` 
   }
-}
+}*/
