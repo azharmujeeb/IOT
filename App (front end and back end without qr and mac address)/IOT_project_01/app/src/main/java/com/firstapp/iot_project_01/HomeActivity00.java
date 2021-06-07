@@ -28,7 +28,7 @@ public class HomeActivity00 extends AppCompatActivity {
 
     private void sendusertohome() {
 
-        Intent home = new Intent(HomeActivity00.this, HomeActivity.class);
+        Intent home = new Intent(HomeActivity00.this, QrcodeActivity.class);
         startActivity(home);
         finish();
     }

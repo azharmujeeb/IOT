@@ -5,6 +5,7 @@ public class Member {
     private String password01;
     private String email02;
     private String password02;
+    private String mac_address;
 
 
     public String getEmail01() {
@@ -41,5 +42,13 @@ public class Member {
 
     public void setPassword02(String password02) {
         this.password02 = password02;
+    }
+
+    public String getMac_address() {
+        return mac_address;
+    }
+
+    public void setMac_address(String mac_address) {
+        this.mac_address = mac_address;
     }
 }
