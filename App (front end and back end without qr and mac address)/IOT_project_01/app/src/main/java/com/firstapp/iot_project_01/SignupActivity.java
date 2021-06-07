@@ -44,7 +44,7 @@ public class SignupActivity extends AppCompatActivity {
             }
 
             private void sendusertohome() {
-                Intent home2 = new Intent(SignupActivity.this, HomeActivity.class);
+                Intent home2 = new Intent(SignupActivity.this, HomeActivity00.class);
                 startActivity(home2);
                 finish();
             }

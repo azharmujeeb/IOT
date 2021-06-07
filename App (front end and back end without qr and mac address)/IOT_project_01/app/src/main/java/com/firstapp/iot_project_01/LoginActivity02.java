@@ -63,7 +63,7 @@ public class LoginActivity02 extends AppCompatActivity {
     }
 
     private void sendusertohome() {
-        Intent home = new Intent(LoginActivity02.this, HomeActivity.class);
+        Intent home = new Intent(LoginActivity02.this, HomeActivity00.class);
         startActivity(home);
         finish();
     }
