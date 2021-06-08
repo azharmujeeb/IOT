@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Josefin Sans;
   margin: 0;
 }
 
@@ -21,13 +21,14 @@ html {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
+  background-color: #b7b2cf;
 }
 
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: lavender;
-  color: black;
+  background-color: #53488c;
+  color: white;
 }
 
 .container {
