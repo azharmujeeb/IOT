@@ -73,8 +73,10 @@ body{
 
 .wrapper .main_content .info{
 	margin: 20px;
-	color: #717171;
+	/*color: #717171;*/
 	line-height: 25px;
+	color: black;
+	font-size: 18px;
 }
 
 .wrapper .main_content .info div{
