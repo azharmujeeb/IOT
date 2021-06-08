@@ -1,4 +1,4 @@
-body{
+/*body{
 	background-color: lavender;
 }
 
@@ -91,6 +91,132 @@ label{
 	background-color: #4c2de6;
 	color: white;
 	border: 1px solid #4c2de6;
+	padding: 2px 15px;
+	border-radius: 5px;
+	transition: all 0.3s;
+}
+
+label:hover{
+	border-bottom: 2px solid #2b2836;
+	border-bottom-right-radius: 20px;
+	color: white;
+	transition: 0.2s ease;
+}
+
+.box:hover{
+	width: 360px;
+	height: 600px;
+	border-radius: 5px;
+}
+
+.box:hover img{
+	width: 100px;
+	height: 100px;
+	margin:20px 31%;
+}
+*/
+
+
+
+
+
+
+
+
+body{
+	background-color: white;
+}
+
+*:focus{
+	outline: none;
+}
+
+.box{
+	box-sizing: border-box;
+	width: 153px;
+	height: 153px;
+	border: 2px solid white;
+	box-shadow: -3px -3px 7px #53488c,
+				3px 3px 5px rgba(59, 63, 68, 0.288);
+	border-radius: 50%;
+	background-color: #7a6fb0;
+	margin-top: 50px;
+	overflow: hidden;
+	transition: all 0.65s;
+
+}
+
+img{
+	box-sizing: border-box;
+	width: 149px;
+	height: 149px;
+	border-radius: 50%;
+	margin: 0;
+	border: 2px solid white;
+	padding: 3px;
+	background-color: white;
+}
+
+::placeholder{
+	color: #e1e3eb;
+}
+
+input[type="text"]{
+	margin-top: 25px;
+}
+
+input[type="text"],
+input[type="email"]{
+	display: block;
+	box-sizing: border-box;
+	background: none;
+	color:white;
+	margin-bottom: 30px;
+	padding: 4px;
+	width: 220px;
+	height: 32px;
+	border: none;
+	border-bottom: 1px solid #53488c;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	transition: 0.2s ease; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus{
+	border-bottom: 2px solid white;
+	border-bottom-right-radius: 20px;
+	color: white;
+	transition: 0.2s ease;
+}
+
+button{
+	border: 1px solid #2b2836;
+	background-color: #53488c;
+	color: white;
+	font-weight: bold;
+	height: 30px;
+	width: 100px;
+	border-radius: 5px;
+	margin: 0px;
+	transition: all 0.3s;
+}
+
+button:hover{
+	transform: scale(1.1);
+}
+
+input[type="file"]{
+	display: none;
+}
+
+label{
+	box-sizing: border-box;
+	font-size: 20px;
+	background-color: #53488c;
+	color: white;
+	border: 1px solid #2b2836;
 	padding: 2px 15px;
 	border-radius: 5px;
 	transition: all 0.3s;

@@ -4,6 +4,71 @@
 	<title>Graph</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	    <script type="text/javascript">
+	      google.charts.load('current', {'packages':['corechart']});
+	      google.charts.setOnLoadCallback(drawChart);
+
+	      function drawChart() {
+
+	        var data = google.visualization.arrayToDataTable([
+	          ['Date', 'Total Students Entered'],
+	          ['01-05-2021 - Tue',25],
+	          ['02-05-2021 - Wed',33],
+	          ['03-05-2021 - Thu',36],
+	          ['04-05-2021 - Fri',48],
+	          ['05-05-2021 - Sat',5],
+	          ['06-05-2021 - Sun',8],
+	          ['07-05-2021 - Mon',43],
+	          ['08-05-2021 - Tue',58]
+	        ]);
+
+	        var options = {
+	          title: 'Number of studets entered in a week.'
+	        };
+
+	        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+	        chart.draw(data, options);
+	      }
+    </script>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        /*["Element", "Density", { role: "style" } ],*/
+        ['Date', 'Total Students Entered',{ role: "style" }],
+        ['01-05-2021 - Tue',25, "#53488c"],
+	    ['02-05-2021 - Wed',33, "#53488c"],
+		['03-05-2021 - Thu',36, "#53488c"],
+		['04-05-2021 - Fri',48, "#53488c"],
+		['05-05-2021 - Sat',5, "#53488c"],
+		['06-05-2021 - Sun',8, "#53488c"],
+		['07-05-2021 - Mon',43, "#53488c"],
+		['08-05-2021 - Tue',58, "#53488c"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Number of Students entered.",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
 </head>
 <body>
 
@@ -22,21 +87,17 @@
 			</ul>
 		</div>
 		<div class="main_content">
-			<div class="header">Welcome! Have a nice day.</div>
+			<div class="header">Welcome to the Graph Page.</div>
 			<div class="info">
 <!-- 				<div>Welcome <b>Admin!</b></div>
 				<div>Graph</div>
  -->
-				<table>
-					<thead>
-						<th>Date</th>
-						<th>Students Entered</th>
-					</thead>
 
-					<tbody id="tbody1">
-						
-					</tbody>
-				</table>
+ 				<div>Graph</div>
+
+				<div id="piechart" style="width: 700px; height: 370px;"></div>
+
+				<div id="barchart_values" style="width: 900px; height: 300px;"></div>
 
 			</div>
 		</div>
