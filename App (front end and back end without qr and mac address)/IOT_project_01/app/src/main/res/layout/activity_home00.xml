@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:backgroundTint="@color/white"
-        android:text="Hall 1"
+        android:text="Room 1"
         android:textColor="@color/black"
         android:layout_marginLeft="110dp"
         android:id="@+id/room"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:backgroundTint="@color/white"
-        android:text="Hall 2"
+        android:text="Room 2"
         android:textColor="@color/black"
         android:layout_marginLeft="110dp"
         />
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
         android:backgroundTint="@color/white"
-        android:text="Hall 3"
+        android:text="Room 3"
         android:textColor="@color/black"
         android:layout_marginLeft="110dp"
         />
