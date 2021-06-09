@@ -1,0 +1,112 @@
+from firebase import firebase
+import RPi.GPIO as GPIO
+import time
+import datetime
+
+# firebase stuff
+url = 'https://main-7ab9c-default-rtdb.firebaseio.com/'
+firebase = firebase.FirebaseApplication(url)
+
+ts = time.time()
+# st = datetime.datetime.fromtimestamp(ts).strftime('%m-%d-%Y  %I:%M:%S')
+st = datetime.datetime.now()
+st = (st.strftime("%Y-%m-%d %H:%M:%S"))
+total = 0
+person_count = 0
+full = "room full"
+empty = "room empty"
+space = "space available"
+
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(16, GPIO.IN)
+GPIO.setup(19, GPIO.IN)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(35, GPIO.OUT)
+GPIO.setup(37, GPIO.OUT)
+GPIO.setup(40, GPIO.OUT)
+
+# this is where the count starts
+while True:
+
+    # if both are blocked
+    if GPIO.input(16) == 1 and GPIO.input(19) == 1:
+        GPIO.output(18, GPIO.LOW)
+        GPIO.output(35, GPIO.LOW)
+        time.sleep(0.1)
+    # there's nothing
+    if GPIO.input(16) == 0 and GPIO.input(19) == 0:
+        GPIO.output(18, GPIO.LOW)
+        GPIO.output(35, GPIO.LOW)
+        time.sleep(0.1)
+        # print("zero people")
+
+    #person enters
+    # If the first sensor (16) is blocked, send person count
+    elif GPIO.input(16) == 0 and GPIO.input(19) == 1:
+        GPIO.output(18, GPIO.HIGH)#buzzer
+        GPIO.output(35, GPIO.HIGH)#LED
+        person_count += 1
+        total += 1
+        test_value = person_count
+        # test_variable.save_value({'value':test_value})
+
+        st = datetime.datetime.now()
+        st = (st.strftime("%Y-%m-%d %H:%M:%S"))
+        print({'number of people ': test_value})
+        # print('Entered @ ' + st)
+        time.sleep(3)#delay time
+        # GPIO.output(18, GPIO.HIGH)
+        # GPIO.output(35, GPIO.HIGH)
+        # print("movement detected")
+        result = firebase.put("/Test", "Status", space)
+        result = firebase.put("/", "Status", space)
+        print(space)
+        print('Entered time')
+
+        # someone is leaving
+        elif GPIO.input(16) == 1 and GPIO.input(19) == 0:
+        person_count -= 1
+        test_value = person_count
+
+        st = datetime.datetime.now()
+        st = (st.strftime("%Y-%m-%d %H:%M:%S"))
+        # test_variable.save_value({'value':test_value})
+        print({'number of people': test_value})
+        # print('Left @ ' + st)
+        result = firebase.put("/", "Status", space)
+        print(space)
+        print('left time: ')
+
+        GPIO.output(18, True)
+        GPIO.output(37, False)
+        time.sleep(2)
+
+    #room empty
+    elif person_count <= 0:
+        GPIO.output(37, GPIO.HIGH)
+        result = firebase.put("/Test", "Status", empty)
+        result = firebase.put("/", "Status", empty)
+        print(empty)
+    elif person_count >= 1:
+        GPIO.output(37, GPIO.LOW)
+
+        # setting a limit
+    if person_count >= 5:
+        GPIO.output(40, GPIO.HIGH)
+        result = firebase.put("/Test", "Status", full)
+        result = firebase.put("/", "Status", full)
+        print(full)
+    elif person_count < 5:
+        GPIO.output(40, GPIO.LOW)
+
+        #for admin web
+        result = firebase.put("/Test", "Count", person_count)
+        print(result)
+        dnt = firebase.put("/Test", "Time", st)
+        print(dnt)
+        result = firebase.put("/Test", "total number of people entered", total)
+
+        # for the app
+        result = firebase.put("/", "Count", person_count)
+        dnt = firebase.put("/", "Time", st)
